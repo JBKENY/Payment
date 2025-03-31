@@ -1,0 +1,15 @@
+{
+  "name": "mpesa-website",
+  "version": "1.0.0",
+  "description": "A personal website with M-Pesa payment integration and dynamic features.",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.3.2"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
