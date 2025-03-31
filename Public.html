@@ -1,151 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: "Poppins", Arial, sans-serif;
-      background: linear-gradient(120deg, #ff7e5f, #feb47b, #86a8e7, #91eae4, #5fffe5);
-      animation: gradientBG 8s infinite ease-in-out;
-      background-size: 500% 500%;
-      color: #ffffff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            width: 250px;
+            height: 100%;
+            transition: transform 0.3s ease;
+            transform: translateX(-100%);
+        }
 
-    .container {
-      text-align: center;
-      padding: 20px;
-      border: 2px solid #ffffff;
-      border-radius: 15px;
-      background: rgba(0, 0, 0, 0.9);
-      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8), inset 0px 0px 15px rgba(255, 255, 255, 0.2);
-      max-width: 450px;
-    }
+        .menu.show {
+            transform: translateX(0);
+        }
 
-    .input-field {
-      margin: 10px 0;
-    }
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 8px;
-    }
+        .menu ul li {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
 
-    input {
-      background: #ffffff;
-      color: #000;
-      font-size: 16px;
-      font-weight: bold;
-    }
+        .menu ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-    button {
-      background: linear-gradient(45deg, #43cea2, #185a9d);
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 16px;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      animation: glowing 1s infinite;
-    }
+        .menu ul li a:hover {
+            background-color: #575757;
+        }
 
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.6);
-    }
+        .menu-button {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-    .dynamic-data {
-      margin-top: 20px;
-    }
+        .menu-button:hover {
+            background-color: #575757;
+        }
 
-    .dynamic-data p {
-      font-size: 18px;
-      font-weight: bold;
-      text-shadow: 0px 0px 8px #00e5ff;
-    }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
 
-    span#cpu-usage {
-      color: #ff007f;
-      font-weight: bold;
-      animation: glowing 1s infinite;
-    }
+        .contact-info, .about-me {
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
 
-    @keyframes glowing {
-      0% { text-shadow: 0px 0px 5px #ff007f, 0px 0px 10px #ff007f; }
-      50% { text-shadow: 0px 0px 15px #ff007f, 0px 0px 30px #ff007f; }
-      100% { text-shadow: 0px 0px 5px #ff007f, 0px 0px 10px #ff007f; }
-    }
+        .contact-info h2, .about-me h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
 
-    h3 {
-      font-size: 28px;
-      text-transform: uppercase;
-      text-shadow: 0px 0px 10px #ffffff;
-    }
+        .contact-info p, .about-me p {
+            margin: 10px 0;
+        }
 
-    p {
-      font-size: 16px;
-    }
-  </style>
+        .icon {
+            margin-right: 10px;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <h3>Welcome to My Website</h3>
-    <p>Contact me on WhatsApp:</p>
-    <a href="https://wa.me/254746599745" target="_blank">
-      <button>WhatsApp Me</button>
-    </a>
-    <p>Payment Details:</p>
-    <div class="input-field">
-      <input type="number" id="amount" placeholder="Enter Amount (Sh)">
+    <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+    <div class="menu" id="menu">
+        <ul>
+            <li><a href="#contacts">Contacts</a></li>
+            <li><a href="#about-me">About Me</a></li>
+        </ul>
     </div>
-    <input type="text" id="phone-number" placeholder="Enter Phone Number">
-    <button onclick="pay()">Pay with Mpesa</button>
-
-    <div class="dynamic-data">
-      <p>Current Time: <span id="current-time"></span></p>
-      <p>Current Date: <span id="current-date"></span></p>
-      <p>CPU Usage: <span id="cpu-usage">Fetching...</span></p>
+    <div class="content">
+        <div id="contacts" class="contact-info">
+            <h2>Contacts</h2>
+            <p><span class="icon">📧</span>Email: <a href="mailto:jacobmusyoka662@gmail.com">jacobmusyoka662@gmail.com</a></p>
+            <p><span class="icon">📞</span>Phone: <a href="tel:+254746599745">+254746599745</a></p>
+            <p><span class="icon">🌍</span>Location: Africa, Kenya</p>
+        </div>
+        <div id="about-me" class="about-me">
+            <h2>About Me</h2>
+            <p>Jacob Musyoka Mwilu</p>
+            <p>I like coding using modern technology. I have all required skills for modern technology. I can work in all environments, whether under pressure or not. I am a responsible Technician from Africa, Kenya.</p>
+        </div>
     </div>
-  </div>
 
-  <script>
-    // Update Time and Date
-    function updateTimeDate() {
-      const now = new Date();
-      document.getElementById('current-time').innerText = now.toLocaleTimeString();
-      document.getElementById('current-date').innerText = now.toDateString();
-    }
-    setInterval(updateTimeDate, 1000);
-
-    // Simulate CPU Usage (Placeholder Value)
-    document.getElementById('cpu-usage').innerText = '42%'; // Replace with actual data fetching logic
-
-    // Mpesa Payment Simulation
-    function pay() {
-      const amount = document.getElementById('amount').value;
-      const phoneNumber = '0746599745';
-      if (!amount) {
-        alert('Please fill in all fields.');
-      } else {
-        alert(`Processing payment of ${amount} KES to ${phoneNumber} (Jacob Musyoka Mwilu).`);
-      }
-    }
-  </script>
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('show');
+        }
+    </script>
 </body>
+
 </html>
