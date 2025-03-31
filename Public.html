@@ -1,187 +1,187 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: "Poppins", Arial, sans-serif;
-      background: linear-gradient(120deg, #ff7e5f, #feb47b, #86a8e7, #91eae4, #5fffe5);
-      animation: gradientBG 8s infinite ease-in-out;
-      background-size: 500% 500%;
-      color: #ffffff;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(120deg, #ff7e5f, #feb47b, #86a8e7, #91eae4, #5fffe5);
+      animation: gradientBG 8s infinite ease-in-out;
+      background-size: 500% 500%;
+      color: #ffffff;
+    }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-    .container {
-      text-align: center;
-      padding: 20px;
-      border: 2px solid #ffffff;
-      border-radius: 15px;
-      background: rgba(0, 0, 0, 0.9);
-      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8), inset 0px 0px 15px rgba(255, 255, 255, 0.2);
-      max-width: 450px;
-    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #ffffff;
+      border-radius: 15px;
+      background: rgba(0, 0, 0, 0.9);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8), inset 0px 0px 15px rgba(255, 255, 255, 0.2);
+      max-width: 450px;
+    }
 
-    .input-field {
-      margin: 10px 0;
-    }
+    .input-field {
+      margin: 10px 0;
+    }
 
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 8px;
-    }
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+    }
 
-    input {
-      background: #ffffff;
-      color: #000;
-      font-size: 16px;
-      font-weight: bold;
-    }
+    input {
+      background: #ffffff;
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+    }
 
-    button {
-      background: linear-gradient(45deg, #43cea2, #185a9d);
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 16px;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+    button {
+      background: linear-gradient(45deg, #43cea2, #185a9d);
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.6);
-    }
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.6);
+    }
 
-    .dynamic-data {
-      margin-top: 20px;
-    }
+    .dynamic-data {
+      margin-top: 20px;
+    }
 
-    .dynamic-data p {
-      font-size: 18px;
-      font-weight: bold;
-      text-shadow: 0px 0px 8px #00e5ff;
-    }
+    .dynamic-data p {
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 0px 0px 8px #00e5ff;
+    }
 
-    span#cpu-usage, span#ram-usage, span#rom-usage, span#mobile-model, span#location {
-      color: #ff007f;
-      font-weight: bold;
-      animation: glowing 1s infinite;
-    }
+    span#cpu-usage, span#ram-usage, span#rom-usage, span#mobile-model, span#location {
+      color: #ff007f;
+      font-weight: bold;
+      animation: glowing 1s infinite;
+    }
 
-    @keyframes glowing {
-      0% { text-shadow: 0px 0px 5px #ff007f, 0px 0px 10px #ff007f; }
-      50% { text-shadow: 0px 0px 15px #ff007f, 0px 0px 30px #ff007f; }
-      100% { text-shadow: 0px 0px 5px #ff007f, 0px 0px 10px #ff007f; }
-    }
+    @keyframes glowing {
+      0% { text-shadow: 0px 0px 5px #ff007f, 0px 0px 10px #ff007f; }
+      50% { text-shadow: 0px 0px 15px #ff007f, 0px 0px 30px #ff007f; }
+      100% { text-shadow: 0px 0px 5px #ff007f, 0px 0px 10px #ff007f; }
+    }
 
-    footer {
-      text-align: center;
-      margin-top: 20px;
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.8);
-      border-top: 2px solid #ffffff;
-      width: 100%;
-      font-size: 14px;
-      color: #ff7e5f;
-      font-weight: bold;
-      text-shadow: 0px 0px 8px #ff7e5f;
-    }
-  </style>
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      border-top: 2px solid #ffffff;
+      width: 100%;
+      font-size: 14px;
+      color: #ff7e5f;
+      font-weight: bold;
+      text-shadow: 0px 0px 8px #ff7e5f;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h3>Welcome to My Website</h3>
-    <p>Contact me on WhatsApp:</p>
-    <a href="https://wa.me/254746599745" target="_blank">
-      <button>WhatsApp Me</button>
-    </a>
-    <p>Payment Details:</p>
-    <div class="input-field">
-      <input type="number" id="amount" placeholder="Enter Amount (Sh)">
-    </div>
-    <input type="text" id="phone-number" value="0746599745" readonly>
-    <button onclick="pay()">Pay with M-Pesa</button>
+  <div class="container">
+    <h3>Welcome to My Website</h3>
+    <p>Contact me on WhatsApp:</p>
+    <a href="https://wa.me/254746599745" target="_blank">
+      <button>WhatsApp Me</button>
+    </a>
+    <p>Payment Details:</p>
+    <div class="input-field">
+      <input type="number" id="amount" placeholder="Enter Amount (Sh)">
+    </div>
+    <input type="text" id="phone-number" value="0746599745" readonly>
+    <button onclick="pay()">Pay with M-Pesa</button>
 
-    <div class="dynamic-data">
-      <p>Current Time: <span id="current-time"></span></p>
-      <p>Current Date: <span id="current-date"></span></p>
-      <p>CPU Health: <span id="cpu-usage">Fetching...</span></p>
-      <p>RAM Usage: <span id="ram-usage">Fetching...</span></p>
-      <p>ROM Usage: <span id="rom-usage">Fetching...</span></p>
-      <p>Mobile Model: <span id="mobile-model">Fetching...</span></p>
-      <p>Location: <span id="location">Fetching...</span></p>
-    </div>
-  </div>
+    <div class="dynamic-data">
+      <p>Current Time: <span id="current-time"></span></p>
+      <p>Current Date: <span id="current-date"></span></p>
+      <p>CPU Health: <span id="cpu-usage">Fetching...</span></p>
+      <p>RAM Usage: <span id="ram-usage">Fetching...</span></p>
+      <p>ROM Usage: <span id="rom-usage">Fetching...</span></p>
+      <p>Mobile Model: <span id="mobile-model">Fetching...</span></p>
+      <p>Location: <span id="location">Fetching...</span></p>
+    </div>
+  </div>
 
-  <footer>
-    Made by C.E.O Jacob Musyoka
-  </footer><script>
-    // Update Time and Date
-    function updateTimeDate() {
-[31/3, 17:04] Microsoft: const now = new Date();
-      document.getElementById('current-time').innerText = now.toLocaleTimeString();
-      document.getElementById('current-date').innerText = now.toDateString();
-    }
-    setInterval(updateTimeDate, 1000);
+  <footer>
+    Made by C.E.O Jacob Musyoka
+  </footer>
+  <script>
+    // Update Time and Date
+    function updateTimeDate() {
+      const now = new Date();
+      document.getElementById('current-time').innerText = now.toLocaleTimeString();
+      document.getElementById('current-date').innerText = now.toDateString();
+    }
+    setInterval(updateTimeDate, 1000);
 
-    // Simulate CPU, RAM, ROM, and Mobile Info
-    function updateSystemInfo() {
-      document.getElementById('cpu-usage').innerText = 'Good'; // Simulating CPU health
-      document.getElementById('ram-usage').innerText = ${Math.floor(Math.random() * 100)}%; // Simulating RAM usage
-      document.getElementById('rom-usage').innerText = ${Math.floor(Math.random() * 100)}%; // Simulating ROM usage
-      document.getElementById('mobile-model').innerText = 'Unknown Device'; // Placeholder for Mobile Model
-      document.getElementById('location').innerText = 'Fetching...'; // Placeholder for Location
-    }
-    setInterval(updateSystemInfo, 2000);
+    // Simulate CPU, RAM, ROM, and Mobile Info
+    function updateSystemInfo() {
+      document.getElementById('cpu-usage').innerText = 'Good'; // Simulating CPU health
+      document.getElementById('ram-usage').innerText = `${Math.floor(Math.random() * 100)}%`; // Simulating RAM usage
+      document.getElementById('rom-usage').innerText = `${Math.floor(Math.random() * 100)}%`; // Simulating ROM usage
+      document.getElementById('mobile-model').innerText = 'Unknown Device'; // Placeholder for Mobile Model
+      document.getElementById('location').innerText = 'Fetching...'; // Placeholder for Location
+    }
+    setInterval(updateSystemInfo, 2000);
 
-    // Payment Simulation
-    async function pay() {
-      const amount = document.getElementById('amount').value;
-      const phoneNumber = document.getElementById('phone-number').value;
+    // Payment Simulation
+    async function pay() {
+      const amount = document.getElementById('amount').value;
+      const phoneNumber = document.getElementById('phone-number').value;
 
-      if (!amount || !phoneNumber) {
-        alert('Please enter a valid amount.');
-        return;
-      }
+      if (!amount || !phoneNumber) {
+        alert('Please enter a valid amount.');
+        return;
+      }
 
-      try {
-        const response = await fetch('/pay', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ amount, phoneNumber }),
-        });
+      try {
+        const response = await fetch('/pay', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ amount, phoneNumber }),
+        });
 
-        const result = await response.json();
-        if (result.success) {
-          alert(Payment of ${amount} KES to ${phoneNumber} was successful!);
-        } else {
-          alert('Payment failed: ' + result.message);
-        }
-      } catch (error) {
-        alert('An error occurred during payment: ' + error.message);
-      }
-    }
-  </script>
+        const result = await response.json();
+        if (result.success) {
+          alert(`Payment of ${amount} KES to ${phoneNumber} was successful!`);
+        } else {
+          alert('Payment failed: ' + result.message);
+        }
+      } catch (error) {
+        alert('An error occurred during payment: ' + error.message);
+      }
+    }
+  </script>
 </body>
 </html>
