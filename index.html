@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech Jacob Musyoka service </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <!-- Header -->
+<header style="background-color: #333; padding: 10px 20px; display: flex; justify-content: flex-end;">
+  <div style="position: relative;">
+    <button onclick="toggleDropdown()" style="
+      background-color: #555;
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    ">
+      ☰ Menu
+    </button>
+    <div id="dropdownMenu" style="
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 4px;
+      overflow: hidden;
+    ">
+      <a href="#about" style="display: block; padding: 10px 14px; text-decoration: none; color: #333;">About</a>
+      <a href="#services" style="display: block; padding: 10px 14px; text-decoration: none; color: #333;">Services</a>
+      <a href="#contact" style="display: block; padding: 10px 14px; text-decoration: none; color: #333;">Contact</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  function toggleDropdown() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+  }
+
+  // Optional: close dropdown if clicked outside
+  window.onclick = function(event) {
+    if (!event.target.closest("header")) {
+      const dropdown = document.getElementById("dropdownMenu");
+      if (dropdown && dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      }
+    }
+  }
+</script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(45deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+      background-size: 400% 400%;
+      animation: gradientBG 10s infinite ease-in-out;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+  .slider {
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 10px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+.glowing-button {
+  background-color: #075E54;
+  color: white;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 5px #00b894, 0 0 10px #00b894, 0 0 15px #00b894, 0 0 20px #00b894;
+}
+
+.glowing-button:hover {
+  box-shadow: 0 0 5px #00b894, 0 0 20px #00b894, 0 0 30px #00b894, 0 0 40px #00b894;
+  background-color: #009c6a;
+}
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.services-container p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 20px;
+  color: #ffddcc;
+  animation: slide-left-right 10s linear infinite;
+}
+
+@keyframes slide-left-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.features-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  animation: scroll-up 15s linear infinite;
+}
+
+.features-list li {
+  font-size: 14px;
+  padding: 6px 0;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.85);
+      border: 2px solid #ffffff;
+      border-radius: 15px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+      width: 90%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .input-field {
+      margin: 10px 0;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input {
+      background: #ffffff;
+      color: #000;
+    }
+
+    button {
+      background: #075E54;
+      color: #ffffff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #EF6C33;
+    }
+.dynamic-data p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+#weather-info {
+  font-weight: bold;
+  color: #ffddcc;
+  margin-top: 10px;
+}
+
+    .dynamic-data {
+      margin-top: 15px;
+    }
+
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #ffddcc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Hello this is tech jacob site </h3>
+
+    <p>Contact me on WhatsApp:</p>
+    <a href="https://wa.me/254746599745" target="_blank">
+      <button>WhatsApp Me</button>
+    </a>
+
+    <p>Talk to our WhatsApp Bot:</p>
+    <a href="https://wa.me/254746599745?text=Hello+bot" target="_blank">
+      <button>Chat Bot</button>
+    </a>
+    <p>Pair with WhatsApp Bot:</p>
+<a href="https://jbm.onrender.com" target="_blank">
+  <button class="glowing-button">Pair Now</button>
+</a>
+
+<h4 style="margin-top: 20px;">WHATSAPP BOT FEATURES</h4>
+<div class="slider">
+  <ul class="features-list">
+    <li>🔥 Autoview status</li>
+    <li>🔥 Antidelete messages</li>
+    <li>🔥 Download songs and videos</li>
+    <li>🔥 Download view once photo</li>
+    <li>🔥 Fake recording</li>
+    <li>🔥 Always online</li>
+    <li>🔥 Fake typing</li>
+    <li>🔥 Auto like status</li>
+    <li>🔥 AI features</li>
+    <li>🔥 ChatGPT features and many more</li>
+    <li>🔥 Downloading status</li>
+    <li>🔥 Anticall</li>
+    <li>🔥 Chatbot</li>
+    <li>🔥 Auto bio</li>
+    <li>🔥 Auto react to messages</li>
+    <li>🔥 Auto read messages</li>
+    <li>🔥 Auto save contacts</li>
+    <li>🔥 Anti WhatsApp ban mode</li>
+  </ul>
+</div>
+<!-- Additional Services -->
+<div class="services-container">
+  <p>🌍 Helb</p>
+  <p>🌍 KRA</p>
+  <p>🔷️ online services</p>
+</div>
+
+
+    <p>Payment Details:</p>
+    <div class="input-field">
+      <input type="number" id="amount" placeholder="Enter Amount (Sh or $)">
+    </div>
+    <div class="input-field">
+      <input type="tel" id="phone" placeholder="Enter Mpesa Phone Number">
+    </div>
+    <button onclick="pay()">Pay with M-Pesa</button>
+
+    <div class="dynamic-data">
+  <p>Current Time: <span id="current-time"></span></p>
+  <p>Current Date: <span id="current-date"></span></p>
+  <p>CPU Usage: <span id="cpu-usage">Fetching...</span></p>
+  <p>Weather: <span id="weather-info">Fetching weather...</span></p>
+</div>
+
+
+  <footer>
+    Powered by Jacob Musyoka
+  </footer>
+
+  <script>
+   // Update Time and Date
+function updateTimeDate() {
+  const now = new Date();
+  document.getElementById('current-time').innerText = now.toLocaleTimeString();
+  document.getElementById('current-date').innerText = now.toDateString();
+}
+
+// Fetch Weather Information using OpenWeatherMap API
+function fetchWeather() {
+  const apiKey = "354b0ef6b1f0785942a4b6ed00da68cb"; // Replace with your actual OpenWeatherMap API key
+  const city = "Nairobi"; // Replace with your city name
+  const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+p: ${temp}°C, ${description}`;
+      document.getElementById('weather-info').innerText = weatherText;
+    })
+    .catch(error => {
+      console.error("Error fetching weather data:", error);
+      document.getElementById('weather-info').innerText = "Weather data unavailable.";
+    });
+}
+
+// Simulate CPU Usage
+setInterval(() => {
+  document.getElementById('cpu-usage').innerText = `${Math.floor(Math.random() * 50) + 30}%`;
+}, 2000);
+
+// Fetch weather on page load and update every 10 minutes
+fetchWeather();
+setInterval(fetchWeather, 600000); // 600000 ms = 10 minutes
+
+// Initialize the time and date update
+setInterval(updateTimeDate, 1000); // Update every second
+
+
+    // Simulated Mpesa Payment
+    function pay() {
+      const amount = document.getElementById('amount').value;
+      const phone = document.getElementById('phone').value;
+
+      if (!amount || !phone) {
+        alert("Please enter both amount and phone number.");
+        return;
+      }
+
+      // Simulate real prompt (would use Daraja API here)
+      alert(`Mpesa STK Push sent!\nPay ${amount} KES to business via ${phone}.\nComplete the payment on your phone.`);
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(45deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+      background-size: 400% 400%;
+      animation: gradientBG 10s infinite ease-in-out;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.85);
+      border: 2px solid #ffffff;
+      border-radius: 15px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+      width: 90%;
+      padding: 20px;
+      text-align: center;
+    }
+    .dynamic-data p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+    #weather-info {
+      font-weight: bold;
+      color: #ffddcc;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>weather for my region</h3>
+    <div class="dynamic-data">
+      <p>TECH JACOB MUSYOKA: <span id="TECH JACOB MUSYOKA"></span></p>
+      <p>Current Date: <span id="HAPPY"></span></p>
+      <p>JBM-X: <span id="JBM-X">Fetching...</span></p>
+      <p>My pressure is to make you full updates with technology: <span id="My pressure is to make you full updates with technology">Fetching...</span></p>
+    </div>
+  </div>
+
+  <script>
+    // Update Time and Date
+    function updateTimeDate() {
+      const now = new Date();
+      document.getElementById('current-time').innerText = now.toLocaleTimeString();
+      document.getElementById('current-date').innerText = now.toDateString();
+    }
+
+    // Fetch Weather Information using OpenWeatherMap API
+    function fetchWeather() {
+      const apiKey = "354b0ef6b1f0785942a4b6ed00da68cb"; // Replace with your actual OpenWeatherMap API key
+      const city = "Nairobi"; // Replace with your city name
+      const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      fetch(weatherApiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const temp = data.main.temp;
+          const description = data.weather[0].description;
+          const weatherText = `Temp: ${temp}°C, ${description}`;
+          document.getElementById('weather-info').innerText = weatherText;
+        })
+        .catch(error => {
+          console.error("Error fetching weather data:", error);
+          document.getElementById('weather-info').innerText = "Weather data unavailable.";
+        });
+    }
+
+    // Simulate CPU Usage
+    setInterval(() => {
+      document.getElementById('cpu-usage').innerText = `${Math.floor(Math.random() * 50) + 30}%`;
+    }, 2000);
+
+    // Fetch weather on page load and update every 10 minutes
+    fetchWeather();
+    setInterval(fetchWeather, 600000); // 600000 ms = 10 minutes
+
+    // Initialize the time and date update
+    setInterval(updateTimeDate, 1000); // Update every second
+  </script>
+  <<script>
+  navigator.geolocation.getCurrentPosition(
+    function(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      console.log("User's Location:", latitude, longitude);
+    },
+    function(error) {
+      console.error("Error getting location:", error);
+    }
+  );
+</script>
+</body>
+</html>
